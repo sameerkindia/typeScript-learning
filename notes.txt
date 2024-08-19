@@ -1,0 +1,12 @@
+Date :- 19/08/24
+
+learing typeScript
+
+- typeScript installed 
+
+make a ts file (app.ts)
+write some code
+run it with ts (tsc app.ts)
+js file will be generated
+make html file
+add js file in html file

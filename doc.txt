@@ -1,5 +1,0 @@
-Date :- 19/08/24
-
-learing typeScript
-
-- typeScript installed 
