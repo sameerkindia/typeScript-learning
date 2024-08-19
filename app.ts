@@ -1,3 +1,9 @@
-let a = "hello world";
+class App {
+  test() {
+    console.log("class working");
+  }
+}
 
-console.log(a);
+let a = new App();
+
+a.test();
