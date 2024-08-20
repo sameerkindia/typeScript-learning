@@ -1,0 +1,16 @@
+Types in TypeScript
+
+  TypeScript mein types ka concept strong typing ko support karne ke liye aata hai. Yeh TypeScript ko JavaScript se alag banata hai, jahan aap variables, functions, ya objects ke liye specific types define kar sakte ho. Yeh compile-time par errors ko catch karne mein help karta hai.
+
+
+1. Primitive Types
+
+  - Primitive types simple aur basic types hote hain jo direct values ko represent karte hain.
+
+   Common Primitive Types:
+
+   let age: number = 25;
+   let name: string = "John";
+   let isStudent: boolean = true;
+   let empty: null = null;
+   let notAssigned: undefined = undefined;
