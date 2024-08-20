@@ -10,3 +10,29 @@ run it with ts (tsc app.ts)
 js file will be generated
 make html file
 add js file in html file
+
+
+
+
+
+
+
+
+
+Basic Tips And Questions
+- What is duplicate indentiffer issue
+
+  Duplicate identifier ka issue tab hota hai jab TypeScript ko same naam ka variable, function, ya class do jagah milta hai. Is situation mein TypeScript confuse ho jata hai ki kis cheez ka reference lena hai, aur error throw karta hai.
+
+
+- How to resolve it
+
+  use this "export {};" on top of the ts file.
+
+
+
+- what is watch
+
+  `watch` ek aisa feature hai jo TypeScript compiler ko real-time mein changes track karne mein help karta hai. Jab bhi aap apni TypeScript files mein koi changes karte ho, watch feature automatically aapke code ko recompile kar deta hai
+
+  use "tsc app.ts -w" 

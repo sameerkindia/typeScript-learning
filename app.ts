@@ -1,3 +1,4 @@
+export {};
 class App {
   test() {
     console.log("class working");
