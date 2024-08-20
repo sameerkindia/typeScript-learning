@@ -14,3 +14,44 @@ Types in TypeScript
    let isStudent: boolean = true;
    let empty: null = null;
    let notAssigned: undefined = undefined;
+
+
+2. Reference Types
+
+  - Reference types complex structures ko represent karte hain, jaise objects, arrays, functions, etc.
+
+
+
+Array in ts
+
+1. Array Without Data Type
+
+Agar aap TypeScript mein array create karte ho bina kisi specific data type ke, to TypeScript us array ko any[] type ka samajhta hai. Iska matlab hai ki aap us array mein koi bhi type ka data store kar sakte ho, lekin isse TypeScript ki strong typing ka benefit nahi milega.
+
+let myArray = []; // TypeScript infers this as 'any[]'
+myArray.push(10);
+myArray.push("Hello");
+myArray.push(true);
+
+
+
+2. Mixed Array
+
+Agar aap ek aisa array chahte ho jisme alag-alag types ke values ho sakti hain, to aap union types ka use kar sakte ho. Isse TypeScript ko pata chalega ki is array mein multiple types ke elements ho sakte hain.
+
+let mixedArray: (number | string | boolean)[] = [];
+mixedArray.push(10);
+mixedArray.push("Hello");
+mixedArray.push(true);
+
+
+
+3. Define Array Type
+
+TypeScript mein aap explicitly array ke type ko define kar sakte ho. Yeh aapko strongly-typed array banane mein help karta hai, jisme sirf specific type ke values hi allowed hoti hain.
+
+Example 1: Number Array
+let numbers: number[] = [1, 2, 3, 4, 5];
+
+Example 2: String Array
+let strings: string[] = ["apple", "banana", "cherry"];
