@@ -59,6 +59,28 @@ export {};
 // console.log(users2);
 
 /////////////// Union Type
-let id: number | string;
-id = 101;
-id = "E101";
+// let id: number | string;
+// id = 101;
+// id = "E101";
+
+////////////////////////////////
+////////////////////////////////
+// Interface
+////////////////////////////////
+////////////////////////////////
+
+interface newUser {
+  name: string;
+  age: number;
+  getDetails: () => {};
+}
+
+const user3: newUser = {
+  name: "sameer",
+  age: 24,
+  getDetails: () => {
+    return "sameer khan";
+  },
+};
+
+console.log(user3);

@@ -1,0 +1,50 @@
+1. What is an Interface?
+
+Interface ek blueprint ki tarah hota hai jo specify karta hai ki kisi object, class, ya function ka structure kaisa hoga. Isme aap properties aur methods define karte ho jo implement hone chahiye.
+
+interface Person {
+    name: string;
+    age: number;
+    greet(): string;
+}
+
+
+
+
+
+2. Why Use Interface?
+
+Interface use karne ke kuch important reasons yeh hain:
+
+Consistency: Interface define karne se aap ensure kar sakte   ho ki different objects ya classes jo same structure follow karte hain, unmein consistency rahe.
+
+Reusability: Interface ko multiple places par reuse kiya ja sakta hai, jisse aapko repeatedly same structure define nahi karna padta.
+
+Code Readability: Interface se aapka code zyada readable aur maintainable hota hai, kyunki interfaces clearly define karte hain ki kya implement hona chahiye.
+
+Type Checking: Interface se TypeScript compile-time par type checking karta hai, jisse errors ka chance kam ho jata hai.
+
+
+
+
+
+
+
+
+3. How to Use Interface?
+
+Aap interface ka use directly objects ke structure ko define karne ke liye kar sakte ho.
+
+interface Person {
+    name: string;
+    age: number;
+    greet(): string;
+}
+
+let person: Person = {
+    name: "John",
+    age: 30,
+    greet() {
+        return `Hello, my name is ${this.name}`;
+    }
+};
