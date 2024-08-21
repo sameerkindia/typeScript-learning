@@ -21,10 +21,13 @@ Types in TypeScript
   - Reference types complex structures ko represent karte hain, jaise objects, arrays, functions, etc.
 
 
-
+///////////////////////////////////////////
+///////////////////////////////////////////
 Array in ts
+///////////////////////////////////////////
+///////////////////////////////////////////
 
-1. Array Without Data Type
+A. Array Without Data Type
 
 Agar aap TypeScript mein array create karte ho bina kisi specific data type ke, to TypeScript us array ko any[] type ka samajhta hai. Iska matlab hai ki aap us array mein koi bhi type ka data store kar sakte ho, lekin isse TypeScript ki strong typing ka benefit nahi milega.
 
@@ -35,7 +38,7 @@ myArray.push(true);
 
 
 
-2. Mixed Array
+B. Mixed Array
 
 Agar aap ek aisa array chahte ho jisme alag-alag types ke values ho sakti hain, to aap union types ka use kar sakte ho. Isse TypeScript ko pata chalega ki is array mein multiple types ke elements ho sakte hain.
 
@@ -46,7 +49,7 @@ mixedArray.push(true);
 
 
 
-3. Define Array Type
+C. Define Array Type
 
 TypeScript mein aap explicitly array ke type ko define kar sakte ho. Yeh aapko strongly-typed array banane mein help karta hai, jisme sirf specific type ke values hi allowed hoti hain.
 
@@ -55,3 +58,43 @@ let numbers: number[] = [1, 2, 3, 4, 5];
 
 Example 2: String Array
 let strings: string[] = ["apple", "banana", "cherry"];
+
+
+
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+Objects in ts
+///////////////////////////////////////////
+///////////////////////////////////////////
+
+TypeScript mein objects ko strongly type kar sakte ho by defining the types of properties jo us object mein honi chahiye. Isse aapke code mein clarity aati hai aur errors detect karna easy ho jata hai.
+
+
+1. Basic Object Type Definition
+
+Agar aap ek simple object create kar rahe ho, to aapko us object ke properties ke types specify karne chahiye.
+
+let person: { name: string; age: number } = {
+    name: "John",
+    age: 30,
+};
+
+
+2. Interface
+
+Interface se hum object ki properties main unka type define kar sakte hai or isko multiple object main use bhi kar sakte hai.
+Any ka use tab hota hai jab humne property ka data pata nahi hota iss condition main hum koi bhi data type assign kar sakte hai
+
+interface usersTyped {
+  name: string;
+  // age: number;
+  age: any;
+  city: string;
+}
+
+let users1: usersTyped = {
+  name: "sameer khan",
+  age: 24,
+  city: "pali",
+};
