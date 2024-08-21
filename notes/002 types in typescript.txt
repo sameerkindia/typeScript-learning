@@ -98,3 +98,18 @@ let users1: usersTyped = {
   age: 24,
   city: "pali",
 };
+
+
+
+/////////////////////////////
+Union Type
+
+
+Union type TypeScript mein multiple types ko combine karne ke liye use hote hain.
+
+Union Types (|):
+Union types allow karte hain ki variable multiple types ka ho sakta hai.
+
+let id: number | string;
+id = 101;
+id = "E101";
