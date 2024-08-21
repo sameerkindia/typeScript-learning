@@ -58,6 +58,15 @@ export {};
 
 // console.log(users2);
 
+/////////////////////
+// Functions
+
+// function add(a: number, b: number): number {
+//   return a + b;
+// }
+
+// console.log(add(4, 5));
+
 /////////////// Union Type
 // let id: number | string;
 // id = 101;
@@ -69,18 +78,18 @@ export {};
 ////////////////////////////////
 ////////////////////////////////
 
-interface newUser {
-  name: string;
-  age: number;
-  getDetails: () => {};
-}
+// interface newUser {
+//   name: string;
+//   age: number;
+//   getDetails: () => {};
+// }
 
-const user3: newUser = {
-  name: "sameer",
-  age: 24,
-  getDetails: () => {
-    return "sameer khan";
-  },
-};
+// const user3: newUser = {
+//   name: "sameer",
+//   age: 24,
+//   getDetails: () => {
+//     return "sameer khan";
+//   },
+// };
 
-console.log(user3);
+// console.log(user3);

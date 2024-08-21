@@ -100,6 +100,17 @@ let users1: usersTyped = {
 };
 
 
+///////////////////////////////////////
+/// function
+
+Function ek block of code hota hai jo koi specific task perform karta hai. TypeScript mein aap parameters aur return type bhi specify kar sakte ho.
+
+
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+
 
 /////////////////////////////
 Union Type
