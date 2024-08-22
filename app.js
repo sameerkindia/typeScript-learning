@@ -70,3 +70,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //   },
 // };
 // console.log(user3);
+var App = /** @class */ (function () {
+    function App(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    App.prototype.getName = function () {
+        console.log(this.name, this.age);
+    };
+    return App;
+}());
+var sameer = new App("sameer", 24);
+sameer.getName();

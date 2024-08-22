@@ -93,3 +93,21 @@ export {};
 // };
 
 // console.log(user3);
+
+class App {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getName(): void {
+    console.log(this.name, this.age);
+  }
+}
+
+const sameer = new App("sameer", 24);
+
+sameer.getName();
