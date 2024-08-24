@@ -33,6 +33,11 @@ Type Checking: Interface se TypeScript compile-time par type checking karta hai,
 
 3. How to Use Interface?
 
+Interfaces ko kaise use kiya jata hai, yeh samajhne ke liye chaliye kuch examples dekhte hain:
+
+
+Example 1: Using Interface with Objects
+
 Aap interface ka use directly objects ke structure ko define karne ke liye kar sakte ho.
 
 interface Person {
@@ -47,4 +52,70 @@ let person: Person = {
     greet() {
         return `Hello, my name is ${this.name}`;
     }
+};
+
+
+
+Example 2: Using Interface with Classes
+
+Interfaces ko classes ke saath bhi use kiya ja sakta hai, jisse ensure hota hai ki class ke objects ka structure consistent ho.
+
+
+interface Animal {
+    name: string;
+    makeSound(): void;
+}
+
+class Dog implements Animal {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    makeSound(): void {
+        console.log("Woof! Woof!");
+    }
+}
+
+let myDog = new Dog("Buddy");
+myDog.makeSound(); // Output: Woof! Woof!
+
+
+
+Example 3: Extending Interfaces
+
+Aap ek interface ko doosre interface se extend kar sakte ho, jisse existing structure mein naye properties ya methods add kar sakte ho.
+
+interface Person {
+    name: string;
+    age: number;
+}
+
+interface Employee extends Person {
+    employeeId: number;
+}
+
+let employee: Employee = {
+    name: "Alice",
+    age: 28,
+    employeeId: 101
+};
+
+
+
+Example 4: Optional and Readonly Properties in Interface
+
+Interfaces mein aap optional properties (?) aur readonly properties bhi define kar sakte ho, jisse kuch properties ko optional ya immutable banaya ja sakta hai.
+
+
+interface Car {
+    readonly make: string;
+    model: string;
+    year?: number;
+}
+
+let myCar: Car = {
+    make: "Toyota",
+    model: "Corolla"
 };
