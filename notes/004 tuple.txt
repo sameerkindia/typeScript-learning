@@ -1,0 +1,54 @@
+Tuple in TypeScript
+
+Tuple TypeScript mein ek aisa data structure hai jo array jaisa hota hai, lekin isme har element ka type aur order predefined hota hai. Matlab aapko pehle se pata hota hai ki tuple mein kitne elements hone chahiye aur unka type kya hoga.
+
+
+
+1. Basic Tuple Definition
+
+Tuple define karne ke liye aapko ek array jaisa syntax use karna hota hai, lekin elements ke types ko square brackets ke andar specify karte hain.
+
+let person: [string, number] = ["Alice", 25];
+
+
+2. Accessing and Modifying Tuple Elements
+
+Tuple ke elements ko aap array ki tarah access aur modify kar sakte ho, lekin aapko har element ka correct type aur order follow karna padta hai.
+
+let employee: [string, number] = ["Bob", 30];
+
+// Accessing elements
+let name = employee[0]; // "Bob"
+let age = employee[1];  // 30
+
+// Modifying elements
+employee[1] = 31; // OK
+// employee[0] = 100; // Error: Type 'number' is not assignable to type 'string'.
+
+
+
+3. Tuple with Optional Elements
+
+Aap tuple mein kuch elements optional bhi bana sakte ho by using the question mark (?) symbol, jisse woh elements ho bhi sakte hain aur nahi bhi.
+
+let product: [string, number, boolean?] = ["Laptop", 1000];
+
+
+
+4. Tuple with Rest Elements
+
+Agar aapko tuple mein variable number of elements allow karne hain ek specific type ke, to aap rest operator (...) ka use kar sakte ho.
+
+let color: [number, ...string[]] = [1, "red", "green", "blue"];
+
+
+
+5. Tuple in Function Parameters
+
+Functions mein parameters ko tuple ke form mein bhi pass kar sakte ho, jisse multiple values ek specific order aur type ke saath pass ki ja sakti hain.
+
+function printEmployeeDetails(employee: [string, number]) {
+    console.log(`Name: ${employee[0]}, Age: ${employee[1]}`);
+}
+
+printEmployeeDetails(["John", 40]);

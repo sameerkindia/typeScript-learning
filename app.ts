@@ -94,20 +94,40 @@ export {};
 
 // console.log(user3);
 
-class App {
-  name: string;
-  age: number;
+// class App {
+//   name: string;
+//   age: number;
 
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
 
-  getName(): void {
-    console.log(this.name, this.age);
-  }
-}
+//   getName(): void {
+//     console.log(this.name, this.age);
+//   }
+// }
 
-const sameer = new App("sameer", 24);
+// const sameer = new App("sameer", 24);
 
-sameer.getName();
+// sameer.getName();
+
+///////////////////////////////////
+///////////////////////////////////
+// Tuple
+///////////////////////////////////
+///////////////////////////////////
+
+let person: [string, number] = ["Alice", 25];
+
+let employee: [string, number] = ["Bob", 30];
+
+// Accessing elements
+let name = employee[0]; // "Bob"
+let age = employee[1]; // 30
+
+// Modifying elements
+employee[1] = 31; // OK
+// employee[0] = 100; // Error: Type 'number' is not assignable to type 'string'.
+
+let product: [string, number, boolean?] = ["Laptop", 1000];
