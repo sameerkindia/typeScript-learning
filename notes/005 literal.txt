@@ -1,0 +1,74 @@
+
+Literal Types in TypeScript
+
+Literal types TypeScript mein ek special type hota hai jo aapko specific values ko type ki tarah use karne ki facility deta hai. Yeh aapke code ko zyada precise aur predictable banata hai.
+
+
+
+1. String Literal Types
+
+String literal types aapko ek variable ko kuch specific string values tak restrict karne ki facility dete hain.
+
+
+let direction: "north" | "south" | "east" | "west";
+
+direction = "north"; // OK
+direction = "south"; // OK
+// direction = "up"; // Error: Type '"up"' is not assignable to type '"north" | "south" | "east" | "west"'.
+
+
+
+2. Numeric Literal Types
+
+Numeric literal types se aap variables ko kuch specific numbers tak restrict kar sakte ho.
+
+let statusCode: 200 | 404 | 500;
+
+statusCode = 200; // OK
+statusCode = 404; // OK
+// statusCode = 300; // Error: Type '300' is not assignable to type '200 | 404 | 500'.
+
+
+
+
+3. Boolean Literal Types
+
+Boolean literal types aapko true ya false values ko specify karne mein madad karte hain.
+
+
+let isActive: true | false;
+
+isActive = true; // OK
+isActive = false; // OK
+
+
+
+4. Combining Literal Types with Unions
+
+Aap literal types ko union types ke saath combine kar sakte ho, jisse aap variables ko ek specific set of values tak restrict kar sakte ho.
+
+
+type Role = "admin" | "user" | "guest";
+
+let userRole: Role;
+
+userRole = "admin"; // OK
+userRole = "user";  // OK
+// userRole = "manager"; // Error: Type '"manager"' is not assignable to type 'Role'.
+
+
+
+5. Literal Types in Functions
+
+Aap functions ke parameters ko bhi literal types specify kar sakte ho, jisse function ke inputs ko restrict karna easy ho jata hai.
+
+
+function move(direction: "up" | "down" | "left" | "right") {
+    console.log(`Moving ${direction}`);
+}
+
+move("up"); // OK
+move("down"); // OK
+// move("forward"); // Error: Argument of type '"forward"' is not assignable to parameter of type '"up" | "down" | "left" | "right"'.
+
+

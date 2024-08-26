@@ -88,12 +88,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Tuple
 ///////////////////////////////////
 ///////////////////////////////////
-var person = ["Alice", 25];
-var employee = ["Bob", 30];
-// Accessing elements
-var name = employee[0]; // "Bob"
-var age = employee[1]; // 30
-// Modifying elements
-employee[1] = 31; // OK
-// employee[0] = 100; // Error: Type 'number' is not assignable to type 'string'.
-var product = ["Laptop", 1000];
+// let person: [string, number] = ["Alice", 25];
+// let employee: [string, number] = ["Bob", 30];
+// // Accessing elements
+// let name = employee[0]; // "Bob"
+// let age = employee[1]; // 30
+// // Modifying elements
+// employee[1] = 31; // OK
+// // employee[0] = 100; // Error: Type 'number' is not assignable to type 'string'.
+// let product: [string, number, boolean?] = ["Laptop", 1000];
+///////////////////////////////////
+///////////////////////////////////
+// Leteral
+///////////////////////////////////
+///////////////////////////////////
+// String literal
+var direction;
+direction = "north"; // OK
+direction = "south"; // OK
+// direction = "up"; // Error: Type '"up"' is not assignable to type '"north" | "south" | "east" | "west"'.
+// Number literal
+var statusCode;
+statusCode = 200; // OK
+statusCode = 404; // OK
+// statusCode = 300; // Error: Type '300' is not assignable to type '200 | 404 | 500'.
+// Boolean literal
+var isActive;
+isActive = true; // OK
+isActive = false; // OK
+var userRole;
+userRole = "admin"; // OK
+userRole = "user"; // OK
+// userRole = "manager"; // Error: Type '"manager"' is not assignable to type 'Role'.
+// Function litreal
+function move(direction) {
+    console.log("Moving ".concat(direction));
+}
+move("up"); // OK
+move("down"); // OK
+// move("forward"); // Error: Argument of type '"forward"' is not assignable to parameter of type '"up" | "down" | "left" | "right"'.
