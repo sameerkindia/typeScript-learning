@@ -1,0 +1,41 @@
+Type Alias in TypeScript
+
+TypeScript mein type alias ek tarika hai jisse aap custom types create kar sakte ho. Yeh aapko complex types ko ek naam dene ki facility deta hai, jisse aapka code zyada readable aur reusable ban jata hai.
+
+
+1. Basic Type Alias
+
+Aap type keyword ka use karke type alias define kar sakte ho. Yeh alias kisi bhi existing type ko represent kar sakta hai, chahe wo primitive ho ya custom type.
+
+
+type ID = string | number;
+
+let userId: ID;
+userId = 101;       // OK
+userId = "admin";   // OK
+
+
+
+2. Type Alias for Function Types
+
+Aap functions ke types ko bhi alias kar sakte ho, jisse complex function signatures ko handle karna asaan ho jata hai.
+
+type Greet = (name: string) => string;
+
+const sayHello: Greet = (name) => `Hello, ${name}!`;
+
+
+3. Type Alias vs Interface
+
+Type alias aur interfaces TypeScript mein dono similar kaam karte hain, lekin kuch key differences hote hain. Type alias ka use primitive types, unions, intersections, aur tuples ko define karne mein hota hai, jabki interfaces mainly objects ke structure ko define karte hain.
+
+
+type AliasPerson = {
+    name: string;
+    age: number;
+};
+
+interface InterfacePerson {
+    name: string;
+    age: number;
+}

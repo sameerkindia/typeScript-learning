@@ -138,45 +138,73 @@ export {};
 ///////////////////////////////////
 ///////////////////////////////////
 
-// String literal
+// // String literal
 
-let direction: "north" | "south" | "east" | "west";
+// let direction: "north" | "south" | "east" | "west";
 
-direction = "north"; // OK
-direction = "south"; // OK
-// direction = "up"; // Error: Type '"up"' is not assignable to type '"north" | "south" | "east" | "west"'.
+// direction = "north"; // OK
+// direction = "south"; // OK
+// // direction = "up"; // Error: Type '"up"' is not assignable to type '"north" | "south" | "east" | "west"'.
 
-// Number literal
+// // Number literal
 
-let statusCode: 200 | 404 | 500;
+// let statusCode: 200 | 404 | 500;
 
-statusCode = 200; // OK
-statusCode = 404; // OK
-// statusCode = 300; // Error: Type '300' is not assignable to type '200 | 404 | 500'.
+// statusCode = 200; // OK
+// statusCode = 404; // OK
+// // statusCode = 300; // Error: Type '300' is not assignable to type '200 | 404 | 500'.
 
-// Boolean literal
+// // Boolean literal
 
-let isActive: true | false;
+// let isActive: true | false;
 
-isActive = true; // OK
-isActive = false; // OK
+// isActive = true; // OK
+// isActive = false; // OK
 
-// Combining literal
+// // Combining literal
 
-type Role = "admin" | "user" | "guest";
+// type Role = "admin" | "user" | "guest";
 
-let userRole: Role;
+// let userRole: Role;
 
-userRole = "admin"; // OK
-userRole = "user"; // OK
-// userRole = "manager"; // Error: Type '"manager"' is not assignable to type 'Role'.
+// userRole = "admin"; // OK
+// userRole = "user"; // OK
+// // userRole = "manager"; // Error: Type '"manager"' is not assignable to type 'Role'.
 
-// Function litreal
+// // Function litreal
 
-function move(direction: "up" | "down" | "left" | "right") {
-  console.log(`Moving ${direction}`);
+// function move(direction: "up" | "down" | "left" | "right") {
+//   console.log(`Moving ${direction}`);
+// }
+
+// move("up"); // OK
+// move("down"); // OK
+// // move("forward"); // Error: Argument of type '"forward"' is not assignable to parameter of type '"up" | "down" | "left" | "right"'.
+
+///////////////////////////////////
+///////////////////////////////////
+// Alias
+///////////////////////////////////
+///////////////////////////////////
+
+type ID = string | number;
+
+let userId: ID;
+userId = 101; // OK
+userId = "admin"; // OK
+
+type Greet = (name: string) => string;
+
+const sayHello: Greet = (name) => `Hello, ${name}!`;
+
+// alias vs interface
+
+type AliasPerson = {
+  name: string;
+  age: number;
+};
+
+interface InterfacePerson {
+  name: string;
+  age: number;
 }
-
-move("up"); // OK
-move("down"); // OK
-// move("forward"); // Error: Argument of type '"forward"' is not assignable to parameter of type '"up" | "down" | "left" | "right"'.
