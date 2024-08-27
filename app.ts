@@ -187,24 +187,48 @@ export {};
 ///////////////////////////////////
 ///////////////////////////////////
 
-type ID = string | number;
+// type ID = string | number;
 
-let userId: ID;
-userId = 101; // OK
-userId = "admin"; // OK
+// let userId: ID;
+// userId = 101; // OK
+// userId = "admin"; // OK
 
-type Greet = (name: string) => string;
+// type Greet = (name: string) => string;
 
-const sayHello: Greet = (name) => `Hello, ${name}!`;
+// const sayHello: Greet = (name) => `Hello, ${name}!`;
 
-// alias vs interface
+// // alias vs interface
 
-type AliasPerson = {
-  name: string;
-  age: number;
-};
+// type AliasPerson = {
+//   name: string;
+//   age: number;
+// };
 
-interface InterfacePerson {
-  name: string;
-  age: number;
+// interface InterfacePerson {
+//   name: string;
+//   age: number;
+// }
+
+///////////////////////////////////
+///////////////////////////////////
+// Unknown
+///////////////////////////////////
+///////////////////////////////////
+
+let someValue: unknown;
+
+someValue = "Hello, World!";
+someValue = 42;
+someValue = true;
+
+// Type Check
+
+let data: unknown;
+
+// Trying to use it directly will cause an error
+// console.log(data.toUpperCase()); // Error: Object is of type 'unknown'.
+
+// Correct way: Type checking first
+if (typeof data === "string") {
+  console.log(data.toUpperCase()); // Now it's safe to use
 }

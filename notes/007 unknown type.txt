@@ -1,0 +1,60 @@
+`unknown` Type in TypeScript
+
+TypeScript mein `unknown` ek aisa type hai jo any jaisa lagta to hai, lekin yeh zyada safe hota hai. Yeh type use karke aapko ensure karna padta hai ki aap us value ke saath kuch bhi karne se pehle uska type check karen.
+
+
+1. Assigning Values to `unknown`
+
+`unknown` type ke variable mein aap kisi bhi type ki value assign kar sakte ho, jaise string, number, boolean, etc.
+
+
+let someValue: unknown;
+
+someValue = "Hello, World!";
+someValue = 42;
+someValue = true;
+
+
+
+
+2. Type Checking Before Using `unknown`
+
+Aap `unknown` type ka variable directly use nahi kar sakte bina pehle uska type check kiye. Agar aap bina type check kare operation karoge, to TypeScript error throw karega.
+
+
+
+let data: unknown;
+
+// Trying to use it directly will cause an error
+// console.log(data.toUpperCase()); // Error: Object is of type 'unknown'.
+
+// Correct way: Type checking first
+if (typeof data === "string") {
+    console.log(data.toUpperCase()); // Now it's safe to use
+}
+
+
+
+
+3. Difference Between `unknown` and any
+
+any: Jab aap kisi variable ko any type dete ho, to aap uske saath kuch bhi kar sakte ho bina kisi type checking ke. Yeh TypeScript ki type safety ko bypass kar deta hai.
+
+`unknown`: Jab aap `unknown` type use karte ho, to aapko us variable ke type ko pehle check karna padta hai. Aap directly us variable ke saath operations nahi kar sakte.
+
+
+let valueAny: any;
+valueAny = 5;
+valueAny.toUpperCase(); // OK at compile time, but will cause a runtime error if not a string.
+
+let valueUnknown: unknown;
+valueUnknown = 5;
+// valueUnknown.toUpperCase(); // Error: Object is of type 'unknown'.
+
+
+
+
+4. Why Use `unknown` Instead of any?
+
+`unknown` use karna safer hota hai kyunki yeh aapko force karta hai type checking karne ke liye, jo bugs aur runtime errors ko prevent karta hai. any ke comparison mein `unknown` zyada strict hota hai, jo aapke code ko zyada reliable banata hai.
+
