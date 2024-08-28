@@ -1,0 +1,48 @@
+`never` Type
+
+`never` type tab use hota hai jab koi function kabhi return nahi karega. Yeh tab hota hai jab function ya to kabhi complete hi nahi hota (like an infinite loop), ya exception throw karta hai aur program ko abruptly end kar deta hai.
+
+
+function throwError(message: string): `never` {
+    throw new Error(message);
+}
+
+
+function infiniteLoop(): `never` {
+    while (true) {
+        // Infinite loop, `never` returns
+    }
+}
+
+
+`never` vs `void` in TypeScript
+
+`never` aur `void` TypeScript ke do special types hain jo aapko functions aur code ke behavior ko better define karne mein help karte hain. Dono alag-alag scenarios mein use hote hain aur inka purpose bhi different hota hai.
+
+
+`void`: Function kuch nahi return karega, lekin function apna kaam poora karega, jaise console par message print karna.
+
+`never`: Function kabhi return nahi karega, ya to kyunki usme infinite loop hai, ya error throw kar raha hai jo program ko terminate kar deta hai.
+
+
+
+
+
+Why Use `never`?
+
+`never` type ka use TypeScript mein aapko code ko aur better define karne mein madad karta hai. Yeh TypeScript ko batata hai ki yeh specific block of code ya function kabhi complete nahi hoga. Yeh especially helpful hota hai jab aap exception handling ya exhaustive type checks kar rahe hote ho.
+
+
+type Shape = "circle" | "square";
+
+function getArea(shape: Shape): number {
+    switch (shape) {
+        case "circle":
+            return Math.PI * 1; // Example calculation
+        case "square":
+            return 1 * 1; // Example calculation
+        default:
+            const _exhaustiveCheck: `never` = shape;
+            throw new Error(`Unhandled shape: ${shape}`);
+    }
+}

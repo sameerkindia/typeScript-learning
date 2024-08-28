@@ -215,20 +215,50 @@ export {};
 ///////////////////////////////////
 ///////////////////////////////////
 
-let someValue: unknown;
+// let someValue: unknown;
 
-someValue = "Hello, World!";
-someValue = 42;
-someValue = true;
+// someValue = "Hello, World!";
+// someValue = 42;
+// someValue = true;
 
-// Type Check
+// // Type Check
 
-let data: unknown;
+// let data: unknown;
 
-// Trying to use it directly will cause an error
-// console.log(data.toUpperCase()); // Error: Object is of type 'unknown'.
+// // Trying to use it directly will cause an error
+// // console.log(data.toUpperCase()); // Error: Object is of type 'unknown'.
 
-// Correct way: Type checking first
-if (typeof data === "string") {
-  console.log(data.toUpperCase()); // Now it's safe to use
+// // Correct way: Type checking first
+// if (typeof data === "string") {
+//   console.log(data.toUpperCase()); // Now it's safe to use
+// }
+
+///////////////////////////////////
+///////////////////////////////////
+// Never
+///////////////////////////////////
+///////////////////////////////////
+
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+function infiniteLoop(): never {
+  while (true) {
+    // Infinite loop, never returns
+  }
+}
+
+type Shape = "circle" | "square";
+
+function getArea(shape: Shape): number {
+  switch (shape) {
+    case "circle":
+      return Math.PI * 1; // Example calculation
+    case "square":
+      return 1 * 1; // Example calculation
+    default:
+      const _exhaustiveCheck: never = shape;
+      throw new Error(`Unhandled shape: ${shape}`);
+  }
 }

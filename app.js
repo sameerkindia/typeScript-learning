@@ -154,15 +154,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Unknown
 ///////////////////////////////////
 ///////////////////////////////////
-var someValue;
-someValue = "Hello, World!";
-someValue = 42;
-someValue = true;
-// Type Check
-var data;
-// Trying to use it directly will cause an error
-// console.log(data.toUpperCase()); // Error: Object is of type 'unknown'.
-// Correct way: Type checking first
-if (typeof data === "string") {
-    console.log(data.toUpperCase()); // Now it's safe to use
+// let someValue: unknown;
+// someValue = "Hello, World!";
+// someValue = 42;
+// someValue = true;
+// // Type Check
+// let data: unknown;
+// // Trying to use it directly will cause an error
+// // console.log(data.toUpperCase()); // Error: Object is of type 'unknown'.
+// // Correct way: Type checking first
+// if (typeof data === "string") {
+//   console.log(data.toUpperCase()); // Now it's safe to use
+// }
+///////////////////////////////////
+///////////////////////////////////
+// Never
+///////////////////////////////////
+///////////////////////////////////
+function throwError(message) {
+    throw new Error(message);
+}
+function infiniteLoop() {
+    while (true) {
+        // Infinite loop, never returns
+    }
+}
+function getArea(shape) {
+    switch (shape) {
+        case "circle":
+            return Math.PI * 1; // Example calculation
+        case "square":
+            return 1 * 1; // Example calculation
+        default:
+            var _exhaustiveCheck = shape;
+            throw new Error("Unhandled shape: ".concat(shape));
+    }
 }
